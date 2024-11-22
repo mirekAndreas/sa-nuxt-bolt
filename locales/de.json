@@ -1,0 +1,50 @@
+{
+  "welcome": "Willkommen bei WeddingPortal",
+  "filters": "Filter",
+  "country": "Land",
+  "allCountries": "Alle Länder",
+  "venueType": "Locationtyp",
+  "allTypes": "Alle Typen",
+  "capacity": "Kapazität",
+  "min": "Min",
+  "max": "Max",
+  "guests": "Gäste",
+  "viewDetails": "Details anzeigen",
+  "location": "Standort",
+  "contactForm": {
+    "title": "Kontaktformular",
+    "name": "Name",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "date": "Hochzeitsdatum",
+    "message": "Nachricht",
+    "submit": "Anfrage senden"
+  },
+  "venueTypes": {
+    "venue": "Hochzeitslocation",
+    "catering": "Catering",
+    "photographer": "Fotograf",
+    "music": "Musik",
+    "decoration": "Dekoration"
+  },
+  "profile": {
+    "dashboard": "Profilverwaltung",
+    "subscriptionStatus": "Abonnement-Status",
+    "active": "Aktiv",
+    "inactive": "Inaktiv",
+    "tier": "Stufe",
+    "startDate": "Startdatum",
+    "daysLeft": "Verbleibende Tage",
+    "analytics": "Analytik",
+    "totalViews": "Gesamtaufrufe",
+    "totalInquiries": "Gesamtanfragen",
+    "conversionRate": "Konversionsrate",
+    "popularityScore": "Popularitätswert",
+    "upgradeToPremium": "Auf Premium upgraden",
+    "premiumBenefits": "Premium-Kontovorteile:",
+    "benefit1": "Unbegrenzte Fotos",
+    "benefit2": "Vorrangige Auflistung in Suchergebnissen",
+    "benefit3": "Detaillierte Statistiken und Analysen",
+    "upgradeNow": "Jetzt upgraden"
+  }
+}

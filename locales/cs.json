@@ -1,0 +1,50 @@
+{
+  "welcome": "Vítejte na WeddingPortal",
+  "filters": "Filtry",
+  "country": "Země",
+  "allCountries": "Všechny země",
+  "venueType": "Typ místa",
+  "allTypes": "Všechny typy",
+  "capacity": "Kapacita",
+  "min": "Min",
+  "max": "Max",
+  "guests": "hostů",
+  "viewDetails": "Zobrazit detail",
+  "location": "Lokalita",
+  "contactForm": {
+    "title": "Kontaktní formulář",
+    "name": "Jméno",
+    "email": "E-mail",
+    "phone": "Telefon",
+    "date": "Datum svatby",
+    "message": "Zpráva",
+    "submit": "Odeslat poptávku"
+  },
+  "venueTypes": {
+    "venue": "Svatební místo",
+    "catering": "Catering",
+    "photographer": "Fotograf",
+    "music": "Hudba",
+    "decoration": "Dekorace"
+  },
+  "profile": {
+    "dashboard": "Správa profilu",
+    "subscriptionStatus": "Stav předplatného",
+    "active": "Aktivní",
+    "inactive": "Neaktivní",
+    "tier": "Úroveň",
+    "startDate": "Datum začátku",
+    "daysLeft": "Zbývající dny",
+    "analytics": "Analytika",
+    "totalViews": "Celkem zobrazení",
+    "totalInquiries": "Celkem poptávek",
+    "conversionRate": "Míra konverze",
+    "popularityScore": "Skóre popularity",
+    "upgradeToPremium": "Upgrade na Premium",
+    "premiumBenefits": "Výhody Premium účtu:",
+    "benefit1": "Neomezený počet fotografií",
+    "benefit2": "Prioritní zobrazení ve výsledcích",
+    "benefit3": "Detailní statistiky a analytika",
+    "upgradeNow": "Upgradovat nyní"
+  }
+}

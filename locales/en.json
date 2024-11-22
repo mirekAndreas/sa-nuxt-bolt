@@ -1,0 +1,50 @@
+{
+  "welcome": "Welcome to WeddingPortal",
+  "filters": "Filters",
+  "country": "Country",
+  "allCountries": "All countries",
+  "venueType": "Venue type",
+  "allTypes": "All types",
+  "capacity": "Capacity",
+  "min": "Min",
+  "max": "Max",
+  "guests": "guests",
+  "viewDetails": "View details",
+  "location": "Location",
+  "contactForm": {
+    "title": "Contact Form",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "date": "Wedding date",
+    "message": "Message",
+    "submit": "Send inquiry"
+  },
+  "venueTypes": {
+    "venue": "Wedding Venue",
+    "catering": "Catering",
+    "photographer": "Photographer",
+    "music": "Music",
+    "decoration": "Decoration"
+  },
+  "profile": {
+    "dashboard": "Profile Management",
+    "subscriptionStatus": "Subscription Status",
+    "active": "Active",
+    "inactive": "Inactive",
+    "tier": "Tier",
+    "startDate": "Start Date",
+    "daysLeft": "Days Left",
+    "analytics": "Analytics",
+    "totalViews": "Total Views",
+    "totalInquiries": "Total Inquiries",
+    "conversionRate": "Conversion Rate",
+    "popularityScore": "Popularity Score",
+    "upgradeToPremium": "Upgrade to Premium",
+    "premiumBenefits": "Premium Account Benefits:",
+    "benefit1": "Unlimited photos",
+    "benefit2": "Priority listing in search results",
+    "benefit3": "Detailed statistics and analytics",
+    "upgradeNow": "Upgrade Now"
+  }
+}
