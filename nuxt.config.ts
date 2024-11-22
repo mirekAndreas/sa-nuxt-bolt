@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxt/image',
   ],
+
   i18n: {
     locales: [
       { code: 'cs', iso: 'cs-CZ', file: 'cs.json', name: 'Čeština' },
@@ -17,6 +18,7 @@ export default defineNuxtConfig({
     langDir: 'locales/',
     vueI18n: './i18n.config.ts'
   },
+
   app: {
     head: {
       htmlAttrs: {
@@ -28,8 +30,21 @@ export default defineNuxtConfig({
       ]
     }
   },
+
   devtools: { enabled: true },
+
   typescript: {
     strict: true
-  }
+  },
+
+  components: {
+    dirs: [
+      {
+        path: '~/components',
+        pathPrefix: false,
+      },
+    ],
+  },
+
+  compatibilityDate: '2024-11-22',
 })

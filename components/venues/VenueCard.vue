@@ -21,7 +21,7 @@
         {{ venue.capacity }} {{ $t('guests') }}
       </div>
       <NuxtLink 
-        :to="localePath(`/venues/${venue.id}`)"
+        :to="`/venues/${venue.id}`"
         class="block w-full text-center bg-primary text-white py-2 rounded-md hover:bg-primary-dark transition-colors"
       >
         {{ $t('viewDetails') }}
@@ -33,9 +33,9 @@
 <script setup lang="ts">
 import type { Venue } from '~/types/venue'
 
-const props = defineProps<{
+defineProps<{
   venue: Venue
 }>()
 
-const { localePath } = useLocalePath()
+const { t } = useI18n()
 </script>
