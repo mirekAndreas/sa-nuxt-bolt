@@ -31,13 +31,51 @@ export const useProfileStore = defineStore('profile', {
   actions: {
     async fetchProfile(profileId: number) {
       this.loading = true
+      this.error = null
+      
       try {
-        // API call would go here
-        const response = await fetch(`/api/profiles/${profileId}`)
-        const data = await response.json()
-        this.currentProfile = data
+        // Dočasně nahradíme API volání mock daty
+        this.currentProfile = {
+          id: profileId,
+          userId: 1,
+          venueId: profileId,
+          subscriptionTier: 'premium',
+          subscriptionStartDate: new Date().toISOString(),
+          subscriptionEndDate: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000).toISOString(),
+          isActive: true,
+          analytics: {
+            views: 1250,
+            inquiries: 45,
+            conversionRate: 0.036,
+            popularityScore: 8.5,
+            monthlyStats: [
+              { 
+                month: 'Leden', 
+                views: 400, 
+                inquiries: 15,
+                conversionRate: 0.0375
+              },
+              { 
+                month: 'Únor', 
+                views: 420, 
+                inquiries: 18,
+                conversionRate: 0.0428
+              },
+              { 
+                month: 'Březen', 
+                views: 430, 
+                inquiries: 12,
+                conversionRate: 0.0279
+              },
+            ]
+          }
+        }
+        
+        // Simulace network latency
+        await new Promise(resolve => setTimeout(resolve, 500))
+        
       } catch (err) {
-        this.error = 'Failed to fetch profile'
+        this.error = 'Nepodařilo se načíst profil'
         console.error(err)
       } finally {
         this.loading = false

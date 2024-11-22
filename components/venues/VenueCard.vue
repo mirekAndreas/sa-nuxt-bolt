@@ -20,6 +20,17 @@
         <IconUsers class="w-4 h-4 mr-1" />
         {{ venue.capacity }} {{ $t('guests') }}
       </div>
+      
+      <div class="flex gap-2 mb-4">
+        <NuxtLink 
+          :to="`/profile/${venue.id}`"
+          class="flex items-center text-sm text-gray-600 hover:text-primary"
+        >
+          <IconUser class="w-4 h-4 mr-1" />
+          {{ $t('profile') }}
+        </NuxtLink>
+      </div>
+
       <NuxtLink 
         :to="`/venues/${venue.id}`"
         class="block w-full text-center bg-primary text-white py-2 rounded-md hover:bg-primary-dark transition-colors"
