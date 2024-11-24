@@ -18,6 +18,23 @@ export interface Venue {
     min: number
     max: number
   }
+  tags: VenueTag[]
+  subscription: VenueSubscription
+}
+
+export interface VenueSubscription {
+  tier: SubscriptionTier
+  validFrom: string
+  validTo: string | null
+  price?: number
+}
+
+export type SubscriptionTier = 'free' | 'member' | 'premium'
+
+export interface VenueTag {
+  id: number
+  name: string
+  slug: string
 }
 
 export type VenueType = 'venue' | 'catering' | 'photographer' | 'music' | 'decoration'
@@ -27,4 +44,6 @@ export interface VenueFilters {
   type?: VenueType
   minCapacity?: number
   maxCapacity?: number
+  tags?: string[]
+  search?: string
 }
