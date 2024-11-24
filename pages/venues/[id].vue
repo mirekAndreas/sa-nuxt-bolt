@@ -18,6 +18,19 @@
               {{ venue.capacity }} {{ $t('guests') }}
             </div>
           </div>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-2 mb-4">
+            <NuxtLink
+              v-for="tag in venue.tags"
+              :key="tag.id"
+              :to="`/tags/${tag.slug}`"
+              class="px-3 py-1 bg-gray-100 rounded-full text-sm text-gray-700 hover:bg-gray-200 transition-colors"
+            >
+              {{ tag.name }}
+            </NuxtLink>
+          </div>
+
           <div class="prose max-w-none">
             {{ venue.description }}
           </div>
@@ -69,7 +82,11 @@ const venue = ref<Venue>({
   coordinates: { lat: 50.0755, lng: 14.4378 },
   contactEmail: 'castle@example.com',
   contactPhone: '+420123456789',
-  priceRange: { min: 1000, max: 5000 }
+  priceRange: { min: 1000, max: 5000 },
+  tags: [
+    { id: 2, name: 'Historické prostory', slug: 'historical' },
+    { id: 4, name: 'Moderní', slug: 'modern' }
+  ]
 })
 
 useHead({
