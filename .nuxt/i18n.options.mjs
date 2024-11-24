@@ -1,8 +1,8 @@
 
 // @ts-nocheck
-import locale__Users_miroslavandreas_Sites_localhost_sa_nuxt_bolt_locales_cs_json from "../locales/cs.json";
-import locale__Users_miroslavandreas_Sites_localhost_sa_nuxt_bolt_locales_en_json from "../locales/en.json";
-import locale__Users_miroslavandreas_Sites_localhost_sa_nuxt_bolt_locales_de_json from "../locales/de.json";
+import locale__home_project_locales_cs_json from "../locales/cs.json";
+import locale__home_project_locales_en_json from "../locales/en.json";
+import locale__home_project_locales_de_json from "../locales/de.json";
 
 
 export const localeCodes =  [
@@ -12,9 +12,9 @@ export const localeCodes =  [
 ]
 
 export const localeMessages = {
-  "cs": [{ key: "../locales/cs.json", load: () => Promise.resolve(locale__Users_miroslavandreas_Sites_localhost_sa_nuxt_bolt_locales_cs_json), cache: true }],
-  "en": [{ key: "../locales/en.json", load: () => Promise.resolve(locale__Users_miroslavandreas_Sites_localhost_sa_nuxt_bolt_locales_en_json), cache: true }],
-  "de": [{ key: "../locales/de.json", load: () => Promise.resolve(locale__Users_miroslavandreas_Sites_localhost_sa_nuxt_bolt_locales_de_json), cache: true }]
+  "cs": [{ key: "../locales/cs.json", load: () => Promise.resolve(locale__home_project_locales_cs_json), cache: true }],
+  "en": [{ key: "../locales/en.json", load: () => Promise.resolve(locale__home_project_locales_en_json), cache: true }],
+  "de": [{ key: "../locales/de.json", load: () => Promise.resolve(locale__home_project_locales_de_json), cache: true }]
 }
 
 export const vueI18nConfigs = [
