@@ -1,49 +1,41 @@
 export interface Venue {
   id: number
   name: string
-  type: VenueType
-  capacity: number
-  country: string
-  city: string
-  address: string
-  description: string
+  type?: string
+  capacity?: number
+  country?: string
+  city?: string
+  address?: string
+  description?: string
   images: string[]
-  coordinates: {
+  coordinates?: {
     lat: number
     lng: number
   }
-  contactEmail: string
-  contactPhone: string
-  priceRange: {
+  contactEmail?: string
+  contactPhone?: string
+  priceRange?: {
     min: number
     max: number
   }
-  tags: VenueTag[]
-  subscription: VenueSubscription
+  tags?: Array<{
+    id: number
+    name: string
+    slug: string
+  }>
+  subscription?: {
+    tier: 'premium' | 'member' | 'free'
+    validFrom?: string
+    validTo?: string
+    price?: number
+  }
 }
-
-export interface VenueSubscription {
-  tier: SubscriptionTier
-  validFrom: string
-  validTo: string | null
-  price?: number
-}
-
-export type SubscriptionTier = 'free' | 'member' | 'premium'
-
-export interface VenueTag {
-  id: number
-  name: string
-  slug: string
-}
-
-export type VenueType = 'venue' | 'catering' | 'photographer' | 'music' | 'decoration'
 
 export interface VenueFilters {
+  search?: string
+  tags?: string[]
   country?: string
-  type?: VenueType
+  type?: string
   minCapacity?: number
   maxCapacity?: number
-  tags?: string[]
-  search?: string
 }

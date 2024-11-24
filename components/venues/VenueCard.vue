@@ -1,19 +1,27 @@
 <template>
-  <div class="bg-white rounded-lg shadow-md overflow-hidden" :class="{
-    'border-2 border-primary': isPremium,
-    'border border-gray-200': !isPremium
-  }">
+  <div
+    class="bg-white rounded-lg shadow-md overflow-hidden"
+    :class="{
+      'border-2 border-primary': isPremium,
+      'border border-gray-200': !isPremium,
+    }"
+  >
     <div class="relative h-48">
-      <img 
-        :src="venue.images[0]" 
+      <img
+        :src="venue.images[0]"
         :alt="venue.name"
         class="w-full h-full object-cover"
       />
-      <div class="absolute top-2 right-2 bg-white px-2 py-1 rounded-full text-sm">
+      <div
+        class="absolute top-2 right-2 bg-white px-2 py-1 rounded-full text-sm"
+      >
         {{ venue.type }}
       </div>
-      <div v-if="isPremium" class="absolute top-2 left-2 bg-primary text-white px-2 py-1 rounded-full text-sm">
-        {{ $t('subscription.premium') }}
+      <div
+        v-if="isPremium"
+        class="absolute top-2 left-2 bg-primary text-white px-2 py-1 rounded-full text-sm"
+      >
+        {{ $t("subscription.premium") }}
       </div>
     </div>
     <div class="p-4">
@@ -23,8 +31,7 @@
         {{ venue.city }}, {{ venue.country }}
       </div>
       <div class="flex items-center text-gray-600 mb-2">
-        <IconUsers class="w-4 h-4 mr-1" />
-        {{ venue.capacity }} {{ $t('guests') }}
+        {{ venue.capacity }} {{ $t("guests") }}
       </div>
 
       <!-- Tags -->
@@ -38,51 +45,54 @@
           {{ tag.name }}
         </NuxtLink>
       </div>
-      
+
       <div class="flex gap-2 mb-4">
-        <NuxtLink 
+        <NuxtLink
           :to="`/profile/${venue.id}`"
           class="flex items-center text-sm text-gray-600 hover:text-primary"
         >
-          <IconUser class="w-4 h-4 mr-1" />
-          {{ $t('profile') }}
+          {{ $t("profile") }}
         </NuxtLink>
       </div>
 
       <div class="flex items-center justify-between mb-4">
-        <span class="text-sm" :class="{
-          'text-primary font-semibold': venue.subscription.tier === 'premium',
-          'text-gray-600': venue.subscription.tier !== 'premium'
-        }">
+        <span
+          class="text-sm"
+          :class="{
+            'text-primary font-semibold': venue.subscription.tier === 'premium',
+            'text-gray-600': venue.subscription.tier !== 'premium',
+          }"
+        >
           {{ $t(`subscription.${venue.subscription.tier}`) }}
         </span>
         <span v-if="venue.subscription.validTo" class="text-sm text-gray-500">
-          {{ $t('subscription.validUntil') }}: {{ formatDate(venue.subscription.validTo) }}
+          {{ $t("subscription.validUntil") }}:
+          {{ formatDate(venue.subscription.validTo) }}
         </span>
       </div>
 
-      <NuxtLink 
+      <NuxtLink
         :to="`/venues/${venue.id}`"
         class="block w-full text-center bg-primary text-white py-2 rounded-md hover:bg-primary-dark transition-colors"
       >
-        {{ $t('viewDetails') }}
+        {{ $t("viewDetails") }}
       </NuxtLink>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import type { Venue } from '~/types/venue'
+import type { Venue } from "~/types/venue";
 
 const props = defineProps<{
-  venue: Venue
-}>()
+  venue: Venue;
+}>();
 
-const { t } = useI18n()
+const { t } = useI18n();
 
-const isPremium = computed(() => props.venue.subscription.tier === 'premium')
+const isPremium = computed(() => props.venue.subscription.tier === "premium");
 
 const formatDate = (date: string) => {
-  return new Date(date).toLocaleDateString()
-}
+  return new Date(date).toLocaleDateString();
+};
 </script>

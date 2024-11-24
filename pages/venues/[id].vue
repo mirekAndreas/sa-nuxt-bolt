@@ -1,4 +1,10 @@
 <template>
+  <div class="mb-8">
+    <NuxtLink to="/" class="text-primary hover:text-primary-dark">
+      &larr; {{ $t("backToVenues") }}
+    </NuxtLink>
+  </div>
+
   <div v-if="venue" class="space-y-8">
     <!-- Gallery -->
     <VenueGallery :images="venue.images" />
@@ -14,8 +20,7 @@
               {{ venue.city }}, {{ venue.country }}
             </div>
             <div class="flex items-center">
-              <IconUsers class="w-5 h-5 mr-2" />
-              {{ venue.capacity }} {{ $t('guests') }}
+              {{ venue.capacity }} {{ $t("guests") }}
             </div>
           </div>
 
@@ -38,7 +43,7 @@
 
         <!-- Map -->
         <div class="bg-white rounded-lg shadow-md p-6">
-          <h2 class="text-xl font-semibold mb-4">{{ $t('location') }}</h2>
+          <h2 class="text-xl font-semibold mb-4">{{ $t("location") }}</h2>
           <VenueMap
             :coordinates="venue.coordinates"
             :zoom="15"
@@ -49,50 +54,42 @@
 
       <!-- Contact Form -->
       <div class="lg:col-span-1">
-        <VenueContactForm
-          :venue-id="venue.id"
-          :venue-name="venue.name"
-        />
+        <VenueContactForm :venue-id="venue.id" :venue-name="venue.name" />
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import type { Venue } from '~/types/venue'
+import type { Venue } from "~/types/venue";
 
-const route = useRoute()
-const { t } = useI18n()
+const route = useRoute();
+const { t } = useI18n();
 
 // This would typically come from an API call
 const venue = ref<Venue>({
   id: parseInt(route.params.id as string),
-  name: 'Castle Venue',
-  type: 'venue',
+  name: "Castle Venue",
+  type: "venue",
   capacity: 150,
-  country: 'Czech Republic',
-  city: 'Prague',
-  address: 'Castle Street 1',
-  description: 'Beautiful castle venue with stunning views and historic architecture.',
-  images: [
-    '/images/castle-1.jpg',
-    '/images/castle-2.jpg',
-    '/images/castle-3.jpg',
-  ],
+  country: "Czech Republic",
+  city: "Prague",
+  address: "Castle Street 1",
+  description:
+    "Beautiful castle venue with stunning views and historic architecture.",
+  images: ["/images/1.webp", "/images/2.webp", "/images/3.webp"],
   coordinates: { lat: 50.0755, lng: 14.4378 },
-  contactEmail: 'castle@example.com',
-  contactPhone: '+420123456789',
+  contactEmail: "castle@example.com",
+  contactPhone: "+420123456789",
   priceRange: { min: 1000, max: 5000 },
   tags: [
-    { id: 2, name: 'Historické prostory', slug: 'historical' },
-    { id: 4, name: 'Moderní', slug: 'modern' }
-  ]
-})
+    { id: 2, name: "Historické prostory", slug: "historical" },
+    { id: 4, name: "Moderní", slug: "modern" },
+  ],
+});
 
 useHead({
   title: venue.value.name,
-  meta: [
-    { name: 'description', content: venue.value.description }
-  ]
-})
+  meta: [{ name: "description", content: venue.value.description }],
+});
 </script>
